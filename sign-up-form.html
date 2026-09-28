@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Sign-Up Form</title>
+    <style>
+      body {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        background-color: antiquewhite;
+      }
+      ul {
+        padding-left: 40px;
+      }
+      #aboutBox {
+        border-color: crimson;
+        padding: 15px 25px;
+      }
+      .row {
+        display: flex;
+        gap: 20px;
+      }
+      .requirements {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+      }
+      @keyframes increaseWidth {
+        from {
+          width: 100px;
+        }
+        to {
+          width: 300px;
+        }
+      }
+      #signUpButton {
+        animation: increaseWidth 2s;
+      }
+      input[type="email"] {
+        background-color: rgb(153, 184, 195);
+      }
+      h1 {
+        text-align: center;
+      }
+      @media (max-width: 600px) {
+        .row {
+          flex-direction: column;
+        }
+      }
+      .highlight {
+        border: 3px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SIGN UP</h1>
+
+    <div class="row">
+      <div>
+        <p>Name:</p>
+        <input type="text" placeholder="Enter your name" />
+      </div>
+      <div>
+        <p>Email</p>
+        <input type="email" placeholder="Enter your email" />
+      </div>
+    </div>
+
+    <p>About you:</p>
+    <textarea
+      id="aboutBox"
+      placeholder="Tell us about yourself..."
+      style="width: 300px; height: 120px; resize: none"
+    ></textarea>
+
+    <br />
+
+    <p>
+      To qualify for sign up you must be able to fulfill the following
+      conditions:
+    </p>
+    <div class="requirements">
+      <div>
+        <p>You must be of 18+ years old.</p>
+      </div>
+      <div>
+        <p>You must have a valid email.</p>
+      </div>
+      <div>
+        <p>You must type your name correctly.</p>
+      </div>
+    </div>
+
+    <button id="signUpButton">Sign Up</button>
+
+    <script>
+      function signedUp() {
+        alert("You have successfully Signed Up!");
+      }
+      document
+        .getElementById("signUpButton")
+        .addEventListener("click", signedUp);
+    </script>
+    <script src="practice.js"></script>
+  </body>
+</html>

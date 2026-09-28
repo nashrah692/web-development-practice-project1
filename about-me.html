@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nashrah Ahmed Khan</title>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&family=Style+Script&display=swap" rel="stylesheet">
+	
+	<style>
+		h1 {
+			color: #640D14;
+			font-family: "Style Script", cursive;
+			font-size: 48px;
+		}
+		ul {
+			padding-left: 40px;
+		}
+		p, ul {
+			font-family: "Charis SIL", serif;
+		}
+		body {
+			background-color: #F3E6BD;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Nashrah Ahmed Khan</h1>
+	<p>I am learning web development from claude.</p>
+	<p>The following are the three things i like:</p>
+	<ul>
+		<li>playing video games</li>
+		<li>studying something of my interest</li>
+		<li>eating good food.</li>
+	</ul>
+	
+	<button id="factButton">Get a random fact :)</button>
+	<p id="factDisplay"></p>
+	
+	<script>
+		document.getElementById("factButton").addEventListener("click", function() {
+			fetch("https://catfact.ninja/fact")
+				.then(response => response.json())
+				.then(data => {
+					document.getElementById("factDisplay").innerHTML = data.fact;
+				});
+		});
+	</script>
+</body>
+</html>
